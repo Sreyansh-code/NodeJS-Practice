@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
     const user = req.body
     users.push(user)
-    res.json(users)
+    res.status(201).json(users)
 })
 app.delete("/:id", (req, res) => {
     users = users.filter((user) => user.id !== Number(req.params.id))
